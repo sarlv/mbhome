@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="maximum-scale=1">
+        <!-- <meta name="apple-mobile-web-app-capable" content="no" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="MobileOptimzied" content="width" />
+        <meta http-equiv="cleartype" content="on" /> -->
+
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        {% assets filters=('scss','cssmin'), output="gen/index.css",
+            "home/vendor/css/normalize.v2.1.2.css",
+            "home/modules/base/css/base.scss",
+            "home/modules/shelf/css/shelf.scss",
+            "home/modules/cards/css/cards.scss",
+            "home/modules/tooltip/css/tooltip.scss",
+            "home/modules/wave/css/wave.scss",
+            "home/modules/carousel/css/carousel.scss",
+            "home/modules/banner/css/banner.scss",
+            "home/modules/allib/css/allib.scss",
+            "home/modules/extra/css/extra.scss",
+            "home/modules/login/css/login.scss"
+        %}
+        <link rel="stylesheet" href="{% static ASSET_URL %}" media="all" type="text/css" />
+        {% endassets %}
+
+        <script src="{% static "home/vendor/js/html5shiv.js" %}"></script>
+        <script src="{% static "home/vendor/js/jquery-1.10.1.min.js" %}"></script>
+        <script src="{% static "home/vendor/js/jquery-ui-1.10.3.custom.min.js" %}"></script>
+        <!--[if lt IE 9]>
+            <link rel="stylesheet" href="{% static "home/compiled/base/css/ie.css" %}">
+            <script src="vendor/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body><!--//  class="unlog" -->
+        <!--[if lt IE 7]>
+            <p class="chromeframe">К сожалению ваш браузер устарел...</p>
+        <![endif]-->
+
+        <header class="global-header">
+            <div class="global-header_wrap page-center">
+                <h1 class="logo"><a href=""><img src="/static/home/modules/base/i/logo_small_en.png" alt="MyBook.ru"></a></h1>
+                <nav class="global-nav">
+                    <a href="" class="active">Как это работает</a>
+                    <a href="">Библиотека</a>
+                    <a href="">Подборки</a>
+                    <a href="">Подписка</a>
+                </nav>
+                <section class="search">
+                    <i class="icon"></i>
+                    <form action="/search/" method="post">
+                        <input type="text" value="Поиск" onFocus="value=''" onBlur="value='Поиск'">
+                    </form>
+                </section>
+                <section class="user-info toggle-popup">
+                    <i class="icon"></i>
+                    <p class="user-info_name"><a href="">Anatoly Burov</a></p>
+                    <ul class="user-info_extr-links">
+                        <li>
+                            <span><a href="">Мои книги</a></span>
+                            <span><a href="/payments/">Подписка</a></span>
+                        </li>
+                        <li>
+                            <span><a href="">Cобытия</a></span>
+                            <span><a href="">Друзья</a></span>
+                        </li>
+                        <li class="last">
+                            <span><a href="">Настройки</a></span>
+                            <span><a href="">Помощь</a></span>
+                            <span><a href="" class="exit">Выйти</a></span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </header><!--//.global-header-->
+
+        <section class="login clearfix">
+            <div class="page-center">
+                <section class="subscr">
+                    <article class="item">
+                        <a href="" class="teaser-books-off"><img src="/static/home/modules/login/i/teaser-books-off.png" alt=""></a>
+                        <a href="" class="teaser-devices"><img src="/static/home/modules/login/i/teaser-devices.png" alt=""></a>
+                        <a href="" class="teaser-social-off"><img src="/static/home/modules/login/i/teaser-social-off.png" alt=""></a>
+                        <div class="wrap">
+                            <h1>Читайте где угодно</h1>
+                            <p>Книги можно читать на айфоне, айпаде и андроиде. Скачивайте книги и читайте без подключения к интернету.</p>
+                        </div>
+                    </article>
+                </section>
+                <section class="login_box">
+                    <form action="/" method="post">
+                        <p class="login_box__input"><input type="text" value="Эл. почта"></p>
+                        <span class="button-1_wrap"><span class="button-1"><i>&mdash;&nbsp;</i> Зарегистрироваться <i>&mdash;&nbsp;</i></span></span>
+                        <p class="login_box__msg">и получить две недели подписки в подарок</p>
+                        <p class="login_box__link"><i class="icon"></i><a href="">Вход с паролем</a></p>
+                    </form>
+                </section>
+            </div>
+        </section>
+
+        <section class="container cont-clear-bg hide clearfix">
+            <div class="page-center">
+            <article class="shelf shelf__long">
+                <h1>Новинки и популярные книги</h1>
+                <div class="carousel carousel_shelf clearfix" data-item-num="6">
+                    <div class="carousel_wrap">
+                        <ul class="clearfix">
+                            <li class="carousel__item">
+                                <a href=""><img src="/static/home/psd/Links/1674036a-2a53-4afe-970b-1e171e7c3d67.jpe" alt=""></a>
+                            </li>
+                            <li class="carousel__item">
+                                <a href=""><img src="/static/home/psd/Links/1674036a-2a53-4afe-970b-1e171e7c3d67.jpe" alt=""></a>
+                            </li>
+                            <li class="carousel__item">
+                                <a href=""><img src="/static/home/psd/Links/1674036a-2a53-4afe-970b-1e171e7c3d67.jpe" alt=""></a>
+                                <div class="cards">
+                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                </div>
+                            </li>
+                            <li class="carousel__item">
+                                <a href=""><img src="/static/home/psd/Links/1674036a-2a53-4afe-970b-1e171e7c3d67.jpe" alt=""></a>
+                            </li>
+                            <li class="carousel__item">
+                                <a href=""><img src="/static/home/psd/Links/1674036a-2a53-4afe-970b-1e171e7c3d67.jpe" alt=""></a>
+                            </li>
+                            <li class="carousel__item">
+                                <a href=""><img src="/static/home/psd/Links/1674036a-2a53-4afe-970b-1e171e7c3d67.jpe" alt=""></a>
+                            </li>
+                            <li class="carousel__item">
+                                <a href=""><img src="/static/home/psd/Links/1674036a-2a53-4afe-970b-1e171e7c3d67.jpe" alt=""></a>
+                            </li>
+                            <li class="carousel__item">
+                                <a href=""><img src="/static/home/psd/Links/1674036a-2a53-4afe-970b-1e171e7c3d67.jpe" alt=""></a>
+                            </li>
+                            <li class="carousel__item">
+                                <a href=""><img src="/static/home/psd/Links/1674036a-2a53-4afe-970b-1e171e7c3d67.jpe" alt=""></a>
+                            </li>
+                        </ul>
+                        </div>
+                        <a class="carousel-control left" href="" data-slide="prev">&lsaquo;</a>
+                        <a class="carousel-control right" href="" data-slide="next">&rsaquo;</a>
+                    </div>
+                <p class="link"><a href="">Все новинки и популярные книги</a></p>
+            </article>
+            </div>
+        </section>
+
+        <section class="container cont-log clearfix">
+            <div class="page-center">
+                <section class="content-part">
+                    <aside class="sidebar">
+                        <article class="user-books">
+                            <h1>Ваши книги</h1>
+                            <div class="carousel clearfix" data-item-num="3">
+                                <div class="carousel_wrap">
+                                <ul class="clearfix">
+                                    <li class="carousel__item">
+                                        <a href=""><img src="/static/home/psd/Links/c3268d74-062c-44f9-9eb2-bc3521f20dc6.jpe" alt=""></a>
+                                        <ol class="page-indicators">
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ol>
+                                    </li>
+                                    <li class="carousel__item">
+                                        <a href=""><img src="/static/home/psd/Links/c3268d74-062c-44f9-9eb2-bc3521f20dc6.jpe" alt=""></a>
+                                        <ol class="page-indicators">
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ol>
+                                    </li>
+                                    <li class="carousel__item">
+                                        <a href=""><img src="/static/home/psd/Links/226440e0-8db7-446f-92b2-113632205281.jpe" alt=""></a>
+                                        <ol class="page-indicators">
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ol>
+                                    </li>
+                                    <li class="carousel__item">
+                                        <a href=""><img src="/static/home/psd/Links/4bf1852e-9533-42f1-a1ce-6ac67d44fb4b.jpe" alt=""></a>
+                                        <ol class="page-indicators">
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ol>
+                                    </li>
+                                    <li class="carousel__item">
+                                        <a href=""><img src="/static/home/psd/Links/4bf1852e-9533-42f1-a1ce-6ac67d44fb4b.jpe" alt=""></a>
+                                        <ol class="page-indicators">
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ol>
+                                    </li>
+                                    <li class="carousel__item">
+                                        <a href=""><img src="/static/home/psd/Links/4bf1852e-9533-42f1-a1ce-6ac67d44fb4b.jpe" alt=""></a>
+                                        <ol class="page-indicators">
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ol>
+                                    </li>
+                                    <li class="carousel__item">
+                                        <a href=""><img src="/static/home/psd/Links/4bf1852e-9533-42f1-a1ce-6ac67d44fb4b.jpe" alt=""></a>
+                                        <ol class="page-indicators">
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ol>
+                                    </li>
+                                    <li class="carousel__item">
+                                        <a href=""><img src="/static/home/psd/Links/c3268d74-062c-44f9-9eb2-bc3521f20dc6.jpe" alt=""></a>
+                                        <ol class="page-indicators">
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li class="mark"></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                                </div>
+                                <a class="carousel-control left" href="" data-slide="prev">&lsaquo;</a>
+                                <a class="carousel-control right" href="" data-slide="next">&rsaquo;</a>
+                            </div>
+                        </article><!--// .user-books-->
+                        <article class="user-friends separator clearfix">
+                            <h1>Что читают и делают прямо сейчас</h1>
+                            <ul class="switch-button home">
+                                <li><a href="">Все пользователи</a></li>
+                                <li class="active"><a href="">Ваши друзья</a></li>
+                            </ul>
+                            <dl class="list-icon clear">
+                                <dt>
+                                    <a href=""><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                </dt>
+                                <dd><a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют рекомендуют рекомендуют</dd>
+                            </dl>
+                            <dl class="list-icon clear">
+                                <dt>
+                                    <a href=""><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                </dt>
+                                <dd><a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют</dd>
+                            </dl>
+                            <dl class="list-icon clear">
+                                <dt>
+                                    <a href=""><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                </dt>
+                                <dd><a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют рекомендуют рекомендуют</dd>
+                            </dl>
+                            <dl class="list-icon clear">
+                                <dt>
+                                    <a href=""><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                </dt>
+                                <dd><a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют рекомендуют рекомендуют</dd>
+                            </dl>
+                            <dl class="list-icon clear">
+                                <dt>
+                                    <a href=""><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                </dt>
+                                <dd><a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют рекомендуют рекомендуют</dd>
+                            </dl>
+
+                            <p class="button-2_wrap home">
+                                <a href="" class="button-2">Все пользователи</a>
+                            </p>
+                        </article>
+                        <article class="user-friends__edit separator clearfix">
+                            <dl class="list-icon list-icon__60 clear">
+                                <dt>
+                                    <a href=""><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                </dt>
+                                <dd class="delete">x</dd>
+                                <dd><a href="">Георгий Константинопольский</a></dd>
+                                <dd class="add"><i class="icon"></i> <a href="">Добавить в друзья</a></dd>
+                            </dl>
+                            <dl class="list-icon list-icon__60 clear">
+                                <dt>
+                                    <a href=""><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                </dt>
+                                <dd class="delete">x</dd>
+                                <dd><a href="">Георгий Константинопольский</a></dd>
+                                <dd class="add"><i class="icon"></i> <a href="">Добавить в друзья</a></dd>
+                            </dl>
+                            <p class="link"><a href="">Еще 10 друзей на MyBook</a></p>
+                        </article>
+                    </aside><!--// .sidebar-->
+                    <article class="shelf">
+                        <h1>Вам понравится</h1>
+                        <ul class="shelf_list">
+                            <li class="shelf_list__item"><a href=""><img src="/static/home/psd/Links/1674036a-2a53-4afe-970b-1e171e7c3d67.jpe" alt=""></a></li>
+                            <li class="shelf_list__item"><a href=""><img src="/static/home/psd/Links/260d3eac-0038-4001-88ce-4e65e182144e.jpe" alt=""></a>
+                                <div class="cards cards_js" data-delta="5">
+                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/c3268d74-062c-44f9-9eb2-bc3521f20dc6.jpe" alt=""></a>
+                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/c3268d74-062c-44f9-9eb2-bc3521f20dc6.jpe" alt=""></a>
+                                </div>
+                            </li>
+                            <li class="shelf_list__item"><a href=""><img src="/static/home/psd/Links/5f220ab9-6ef4-4bb6-8e8e-8744acfe78bb.jpe" alt=""></a></li>
+                            <li class="shelf_list__item"><a href=""><img src="/static/home/psd/Links/1941e7d6-f56d-4adc-828a-6d392f912047.jpe" alt=""></a></li>
+                        </ul>
+                    </article><!--// .shelf -->
+
+                    <section class="wave home" data-speed="100">
+                        <ul class="clearfix">
+                            <li><a href=""><img src="/static/home/psd/Links/37bb617a-4165-4dc6-ba53-dc3841697541.jpe" alt=""></a></li>
+                            <li><a href=""><img src="/static/home/psd/Links/7b892ac0-b4cd-4986-8eba-0b2d7e0c28d9.jpe" alt=""></a></li>
+                            <li><a href=""><img src="/static/home/psd/Links/201ff300-0a40-4e1f-a64f-e56b7863fb7f.jpe" alt=""></a></li>
+                            <li><a href=""><img src="/static/home/psd/Links/485f0470-dc03-47da-badb-9d6d05c5244c.jpe" alt=""></a></li>
+                            <li><a href=""><img src="/static/home/psd/Links/c3268d74-062c-44f9-9eb2-bc3521f20dc6.jpe" alt=""></a></li>
+                            <li><a href=""><img src="/static/home/psd/Links/226440e0-8db7-446f-92b2-113632205281.jpe" alt=""></a></li>
+                            <li><a href=""><img src="/static/home/psd/Links/4bf1852e-9533-42f1-a1ce-6ac67d44fb4b.jpe" alt=""></a></li>
+                        </ul>
+                        <span class="button-1_wrap"><span class="button-1">Посмотреть все рекомендации</span></span>
+                    </section><!--// .wave -->
+
+                    <article class="shelf">
+                        <h1>Новинки и популярные книги</h1>
+                        <div class="carousel_wrap">
+                            <ul class="shelf_list tooltiptarg">
+                                <li class="shelf_list__item"><a href=""><img src="/static/home/psd/Links/37bb617a-4165-4dc6-ba53-dc3841697541.jpe" alt=""></a></li>
+                                <li class="shelf_list__item"><a href=""><img src="/static/home/psd/Links/7b892ac0-b4cd-4986-8eba-0b2d7e0c28d9.jpe" alt=""></a>
+                                </li>
+                                <li class="shelf_list__item"><a href=""><img src="/static/home/psd/Links/201ff300-0a40-4e1f-a64f-e56b7863fb7f.jpe" alt=""></a>
+                                    <article class="tooltip">
+                                        <dl class="tooltip__item">
+                                            <dt class="cards">
+                                                <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                            </dt>
+                                            <dd class="tooltip__item_text"><a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют</dd>
+                                        </dl>
+                                        <dl class="tooltip__item">
+                                            <dt class="cards">
+                                                <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                            </dt>
+                                            <dd class="tooltip__item_text"><a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют <a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют</dd>
+                                        </dl>
+                                        <dl class="tooltip__item">
+                                            <dt class="cards">
+                                                <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                            </dt>
+                                            <dd class="tooltip__item_text"><a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют</dd>
+                                        </dl>
+                                    </article>
+                                </li>
+                                <li class="shelf_list__item"><a href=""><img src="/static/home/psd/Links/485f0470-dc03-47da-badb-9d6d05c5244c.jpe" alt=""></a>
+                                    <article class="tooltip">
+                                        <div class="tooltip_wrap">
+                                            <dl class="tooltip__item">
+                                                <dt class="cards">
+                                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                </dt>
+                                                <dd class="tooltip__item_text"><a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют</dd>
+                                            </dl>
+                                            <dl class="tooltip__item">
+                                                <dt class="cards">
+                                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                </dt>
+                                                <dd class="tooltip__item_text"><a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют</dd>
+                                            </dl>
+                                            <dl class="tooltip__item">
+                                                <dt class="cards">
+                                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                </dt>
+                                                <dd class="tooltip__item_text"><a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют <a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют</dd>
+                                            </dl>
+                                            <dl class="tooltip__item">
+                                                <dt class="cards">
+                                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                    <a href="" class="cards__item"><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                                                </dt>
+                                                <dd class="tooltip__item_text"><a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют</dd>
+                                            </dl>
+                                        </div>
+                                    </article>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="link"><a href="">Все новинки и популярные книги</a></p>
+                    </article><!--// .shelf -->
+                </section><!--// .content-part-->
+            </div>
+        </section><!--// .container-->
+
+        <section class="banner clear">
+            <div class="page-center">
+                <dl class="banner_large">
+                    <dt><a href="">«11/22/63» Стивена Кинга</a></dt>
+                    <dd class="img"><a href=""><img src="/static/home/modules/banner/i/king.png" alt=""></a></dd>
+                    <dd>Этот роман безоговорочно признают лучшей книгой Стивена Кинга и миллионы фанатов писателя, и серьезные литературные критики. …Убийство президента Кеннеди стало самым трагическим событием.</dd>
+                    <dd class="button"><a href="">Выбор редакции</a></dd>
+                </dl>
+            </div>
+        </section><!--// .banners-->
+
+        <section class="banner clear">
+            <div class="page-center">
+                <dl class="banner_small hide banner_small__win">
+                    <dt>
+                        <a href="" class="author">Виктор Пелевин</a><br>
+                        <a href="" class="book">Batman Apollo</a>
+                    </dt>
+                    <dd class="img"><a href=""><img src="/static/home/modules/banner/i/win.png" alt=""></a></dd>
+                    <dd>Этот роман безоговорочно признают лучшей книгой.</dd>
+                </dl>
+                <dl class="banner_small hide">
+                    <dt>
+                        <a href="" class="author">Виктор Пелевин</a><br>
+                        <a href="" class="book">Batman Apollo</a>
+                    </dt>
+                    <dd class="img"><a href=""><img src="/static/home/modules/banner/i/pelevin.png" alt=""></a></dd>
+                    <dd>Этот роман безоговорочно признают лучшей книгой.</dd>
+                </dl>
+            </div>
+        </section><!--// .banners-->
+
+        <section class="all-lib">
+            <section class="list clearfix">
+                <h1><a href="">Вся библиотека</a> <sup>123</sup></h1>
+
+                <div class="column">
+                    <h2><a href="">Детективы</a> <sup>541</sup></h2>
+                    <h2><a href="">Классика</a> <sup>4029</sup></h2>
+                    <h2><a href="">Бизнес-Книги</a> <sup>2410</sup></h2>
+                    <ul>
+                        <li><a href="">зарубежные</a></li>
+                        <li><a href="">иронические</a></li>
+                        <li><a href="">исторические</a></li>
+                        <li><a href="">разные </a> . . .</li>
+                    </ul>
+                    <h2><a href="">Фантастика</a> <sup>782</sup></h2>
+                    <h2><a href="">Детские книги</a> <sup>615</sup></h2>
+                    <h2><a href="">Дом, Семья</a> <sup>271</sup></h2>
+                </div>
+
+                <div class="column">
+                    <h2><a href="">Зарубежная литература</a> <sup>2792</sup></h2>
+                    <h2><a href="">Искусство</a> <sup>215</sup></h2>
+                    <ul>
+                        <li><a href="">биология</a></li>
+                        <li><a href="">география</a></li>
+                        <li><a href="">иностранные языки</a></li>
+                        <li><a href="">история</a></li>
+                        <li><a href="">культурология</a> . . .</li>
+                    </ul>
+                    <h2><a href="">Книги по психологии</a> <sup>141</sup></h2>
+                    <h2><a href="">Компьютеры</a> <sup>1024</sup></h2>
+                    <h2><a href="">Любовные романы</a> <sup>2311</sup></h2>
+                    <h2><a href="">Малая форма</a> <sup>312</sup></h2>
+                </div>
+                <div class="column">
+                    <h2><a href="">Наука, Образование</a> <sup>364</sup></h2>
+                    <ul>
+                        <li><a href="">зарубежные</a></li>
+                        <li><a href="">иронические</a></li>
+                        <li><a href="">исторические</a></li>
+                        <li><a href="">классические </a> . . .</li>
+                    </ul>
+                    <h2><a href="">Периодические издания</a> <sup>2351</sup></h2>
+                    <h2><a href="">Поэзия, Драматургия</a> <sup>1412</sup></h2>
+                    <ul>
+                        <li><a href="">античная</a></li>
+                        <li><a href="">древневосточная</a></li>
+                        <li><a href="">древнерусская</a></li>
+                        <li><a href="">европейская </a> . . .</li>
+                    </ul>
+                    <h2><a href="">Приключения</a> <sup>172</sup></h2>
+                    <h2><a href="">Публицистика</a> <sup>189</sup></h2>
+                </div>
+                <div class="column">
+                    <h2><a href="">Религия</a> <sup>512</sup></h2>
+                    <h2><a href="">Современная проза</a> <sup>561</sup></h2>
+                    <ul>
+                        <li><a href="">биология</a></li>
+                        <li><a href="">география</a></li>
+                        <li><a href="">иностранные языки</a></li>
+                        <li><a href="">история</a></li>
+                        <li><a href="">культурология</a> . . .</li>
+                    </ul>
+                    <h2><a href="">Справочники</a> <sup>14</sup></h2>
+                    <h2><a href="">Фэнтези</a> <sup>902</sup></h2>
+                    <h2><a href="">Юмор</a> <sup>401</sup></h2>
+                </div>
+            </section>
+
+
+            <section class="carousel carousel__large" data-item-num="3">
+                <h1><a href="">Подборки</a></h1>
+                <div class="carousel_wrap">
+                <ul class="clearfix">
+                    <li class="carousel__item">
+                        <img class="bg" src="/static/home/modules/carousel/i/caver-sample.png" alt="">
+                        <a href="" class="img"><img src="/static/home/modules/carousel/i/sample.jpg" alt=""></a>
+                        <span class="wrap"><a href="">Книги о странностях человеческого тела и не только</a> <sup>15</sup></span>
+                    </li>
+                    <li class="carousel__item active">
+                        <img class="bg" src="/static/home/modules/carousel/i/caver-sample.png" alt="">
+                        <a href="" class="img"><img src="/static/home/modules/carousel/i/sample.jpg" alt=""></a>
+                        <span class="wrap"><a href="">Книги о странностях человеческого тела и не только</a> <sup>15</sup></span>
+                    </li>
+                    <li class="carousel__item">
+                        <img class="bg" src="/static/home/modules/carousel/i/caver-sample.png" alt="">
+                        <a href="" class="img"><img src="/static/home/modules/carousel/i/sample.jpg" alt=""></a>
+                        <span class="wrap"><a href="">Книги о странностях человеческого тела и не только</a> <sup>15</sup></span>
+                    </li>
+                    <li class="carousel__item">
+                        <img class="bg" src="/static/home/modules/carousel/i/caver-sample.png" alt="">
+                        <a href="" class="img"><img src="/static/home/modules/carousel/i/sample.jpg" alt=""></a>
+                        <span class="wrap"><a href="">Книги о странностях человеческого тела и не только</a> <sup>15</sup></span>
+                    </li>
+                </ul>
+                </div>
+                <a class="carousel-control left" href="" data-slide="prev"><i></i></a>
+                <a class="carousel-control right" href="" data-slide="next"><i></i></a>
+                <i class="ungle left"></i>
+                <i class="ungle right"></i>
+            </section>
+
+            <section class="author clear">
+                <h1>Популярные авторы</h1>
+                <section class="carousel carousel__round clearfix" data-item-num="6">
+                    <div class="carousel_wrap">
+                    <ul class="clearfix">
+                        <li class="carousel__item">
+                            <a href="" class="img"><img src="/static/home/psd/Links/06de72bb-ad72-40e2-8265-9535316cf4f9.jpg" alt=""></a>
+                            <a href="" class="author__name">Оскар Уайльд</a>
+                            <a href="" class="author__books">15 книг</a>
+                            <a href="" class="author__sub">12 подписчиков</a>
+                            <span class="author__friends">(<a href="">5 друзей</a>)</span>
+                        </li>
+                        <li class="carousel__item">
+                            <a href="" class="img"><img src="/static/home/psd/Links/06de72bb-ad72-40e2-8265-9535316cf4f9.jpg" alt=""></a>
+                            <a href="" class="author__name">Оскар Уайльд</a>
+                            <a href="" class="author__books">15 книг</a>
+                            <a href="" class="author__sub">12 подписчиков</a>
+                            <span class="author__friends">(<a href="">5 друзей</a>)</span>
+                        </li>
+                        <li class="carousel__item">
+                            <a href="" class="img"><img src="/static/home/psd/Links/06de72bb-ad72-40e2-8265-9535316cf4f9.jpg" alt=""></a>
+                            <a href="" class="author__name">Оскар Уайльд</a>
+                            <a href="" class="author__books">15 книг</a>
+                            <a href="" class="author__sub">12 подписчиков</a>
+                            <span class="author__friends">(<a href="">5 друзей</a>)</span>
+                        </li>
+                        <li class="carousel__item">
+                            <a href="" class="img"><img src="/static/home/psd/Links/49ee55a7-f526-4f33-adbc-d4e91a83a7c5.jpg" alt=""></a>
+                            <a href="" class="author__name">Оскар Уайльд</a>
+                            <a href="" class="author__books">15 книг</a>
+                            <a href="" class="author__sub">12 подписчиков</a>
+                            <span class="author__friends">(<a href="">5 друзей</a>)</span>
+                        </li>
+                        <li class="carousel__item">
+                            <a href="" class="img"><img src="/static/home/psd/Links/5c2b5a59-4d85-41b2-81df-209308d3588c.jpg" alt=""></a>
+                            <a href="" class="author__name">Оскар Уайльд</a>
+                            <a href="" class="author__books">15 книг</a>
+                            <a href="" class="author__sub">12 подписчиков</a>
+                            <span class="author__friends">(<a href="">5 друзей</a>)</span>
+                        </li>
+                        <li class="carousel__item">
+                            <a href="" class="img"><img src="/static/home/psd/Links/a1d53be5-7f9f-4460-a25a-6f7fa568516c.jpg" alt=""></a>
+                            <a href="" class="author__name">Оскар Уайльд</a>
+                            <a href="" class="author__books">15 книг</a>
+                            <a href="" class="author__sub">12 подписчиков</a>
+                            <span class="author__friends">(<a href="">5 друзей</a>)</span>
+                        </li>
+                        <li class="carousel__item">
+                            <a href="" class="img"><img src="/static/home/psd/Links/d4329587-04b9-46f2-92c2-17e13c577593.jpg" alt=""></a>
+                            <a href="" class="author__name">Оскар Уайльд</a>
+                            <a href="" class="author__books">15 книг</a>
+                            <a href="" class="author__sub">12 подписчиков</a>
+                            <span class="author__friends">(<a href="">5 друзей</a>)</span>
+                        </li>
+                        <li class="carousel__item">
+                            <a href="" class="img"><img src="/static/home/psd/Links/06de72bb-ad72-40e2-8265-9535316cf4f9.jpg" alt=""></a>
+                            <a href="" class="author__name">Оскар Уайльд</a>
+                            <a href="" class="author__books">15 книг</a>
+                            <a href="" class="author__sub">12 подписчиков</a>
+                            <span class="author__friends">(<a href="">5 друзей</a>)</span>
+                        </li>
+                    </ul>
+                    </div>
+                    <a class="carousel-control left" href="" data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="" data-slide="next">&rsaquo;</a>
+                </section>
+            </section>
+        </section>
+
+
+        <section class="extra">
+            <div class="page-center">
+                <div class="extra__wrap clearfix">
+                    <article class="column column-last"><img src="/static/home/modules/base/i/facebook.jpg" alt="MyBook.ru"></article>
+                    <article class="column">
+                        <h1>Лучшая рецензия <a href="">за неделю</a> <i class="icon">▼</i></h1>
+                        <p><i>«Гений» – это детектив и в то же время гораздо больше, чем детектив. Литературный уровень «Гения» приятно удивит даже самого придирчивого ценителя хорошей прозы. Джесси Келлермана сравнивают с Джоном Фаулзом, и в этом есть доля истины. </i></p>
+                        <dl class="list-icon clear">
+                            <dt>
+                                <a href=""><img src="/static/home/psd/Links/bbd01961-52f9-4645-83ed-e3ca1e095715.jpe" alt=""></a>
+                            </dt>
+                            <dd><a href="">Георгий</a> и <a href="">Наталья</a> рекомендуют рекомендуют рекомендуют</dd>
+                        </dl>
+                    </article>
+                    <article class="column">
+                        <h1>Лучшая цитата <a href="">за неделю</a> <i class="icon">▼</i></h1>
+                        <p class="large">«Дурно, что вы говорите, и я прошу вас, если вы хороший человек, забудьте, что вы сказали, как и я забуду»</p>
+                        <p>Из книги <a href="">«Тренировка мозга»</a></p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <footer class="global-footer">
+            <div class="global-footer_wrap page-center">
+                <ul class="mobile-apps">
+                    <li class="icon appstore"><a href=""></a></li>
+                    <li class="icon androidmarket"><a href=""></a></li>
+                    <li class="icon winphone"><a href=""></a></li>
+                </ul>
+                <section class="list-link">
+                    <ul>
+                        <li><a href="">Подписка</a></li>
+                        <li><a href="">Настройки</a></li>
+                        <li><a href="">MyBook для iPad и iPhone</a></li>
+                        <li><a href="">Как оплатить</a></li>
+                        <li><a href="">Подарочный код</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">О проекте</a></li>
+                        <li><a href="">Служба поддержки</a></li>
+                        <li><a href="">Условия использования</a></li>
+                        <li><a href="">Правообладателям</a></li>
+                        <li><a href="">Обратная связь</a></li>
+                    </ul>
+                
+                    <article class="partners">
+                        <h2>Наши партнеры:</h2>
+                        <ul>
+                            <li class="icon man"><a href=""></a></li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section class="extra-info">
+                    <p class="copyright">© 2013 MyBook</p>
+                    <ul class="social">
+                        <li><i class="icon facebook"></i> <a href="">Заходите в Фейсбуке</a></li>
+                        <li><i class="icon twitter"></i> <a href="">Подпишитесь в Твиттере</a></li>
+                    </ul>
+
+                    <dl class="studio">
+                        <dt>Шаблоны сделаны в <a href="">Студии Артемия Лебедева</a>
+                        </dt>
+                        <dd class="icon"><a href=""></a></dd>
+                    </dl>
+                </section>
+                
+
+            </div>
+        </footer><!--//.global-footer-->
+        <script src="{% static "home/modules/base/js/script.js" %}"></script>
+        <script src="{% static "home/modules/base/js/switch.js" %}"></script>
+        <script src="{% static "home/modules/base/js/toggle-popup.js" %}"></script>
+        <script src="{% static "home/modules/carousel/js/script.js" %}"></script>
+        <script src="{% static "home/modules/wave/js/script.js" %}"></script>
+        <script src="{% static "home/modules/tooltip/js/script.js" %}"></script>
+        <script src="{% static "home/modules/cards/js/script.js" %}"></script>
+
+    </body>
+</html>

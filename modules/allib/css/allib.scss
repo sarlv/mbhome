@@ -1,0 +1,88 @@
+@import "../../fonts/fonts.scss";
+@import "../../base/css/tools.scss";
+
+.all-lib {
+	width: 910px;
+	background-color: #fff;
+	margin: 30px auto;
+	padding: 24px 26px;
+	@include radius-(10px);
+
+	.list {
+		margin-bottom: 20px;
+		h1 {
+			text-align: center;
+			font: normal 1.5em 'Philosopher';
+			margin: 0 0 25px;
+			a {
+				color: #000;
+				}
+			}
+			sup, sub {
+				color: #999;
+			}
+		h2 {
+			font: normal 1em 'Philosopher';
+			font-size: 1em;
+			margin: 0 0 14px;
+            a {
+                text-decoration: none;
+                border-bottom: 1px solid #d5c0bd;
+                &:hover {
+                    border-bottom: 0;
+                    }
+                 }
+			 	
+			}
+
+		sup, sub {
+			color: #c7aba7;
+			}
+		ul {
+			margin: -10px 0 12px;
+			padding: 0;
+			}
+		li {
+			@include inline-block;
+			color: #c7aba7;
+			font-size: .75em;
+			a {
+				color: #c7aba7;
+                text-decoration: none;
+                border-bottom: 1px solid #e9e0de;
+                &:hover {
+                    border-bottom: 0;
+                    }
+ 				}
+			}
+
+		.column {
+			float: left;
+			width: 24%;
+			padding-right: 1.3%;
+			vertical-align: top;
+			}
+		.column:last-child {
+			padding-right: 0;
+			}
+
+		}
+		.author {
+			margin: 14px 0 0;
+			h1 {
+				font: normal 1.5em 'Philosopher';
+				text-align: center;
+				margin: 0 0 15px;
+				}
+			}
+	}
+
+.lt-ie9 {
+	.all-lib {
+		.column {
+			width: 23%;
+			padding-right: 2%;
+			}
+		} 
+	
+	}

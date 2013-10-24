@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'PhilosopherBold';
+    src: url('/static/home/modules/fonts/Philosopher/bold/philosopher-bold.eot');
+    src: url('/static/home/modules/fonts/Philosopher/bold/philosopher-bold.eot') format('embedded-opentype'),
+         url('/static/home/modules/fonts/Philosopher/bold/philosopher-bold.woff') format('woff'),
+         url('/static/home/modules/fonts/Philosopher/bold/philosopher-bold.ttf') format('truetype'),
+         url('/static/home/modules/fonts/Philosopher/bold/philosopher-bold.svg#PhilosopherBold') format('svg');
+}

@@ -1,0 +1,131 @@
+@import "../../fonts/fonts.scss";
+@import "../../base/css/tools.scss";
+
+.banner {
+	text-align: center;
+    padding: 30px 0 0;
+	.banner_large {
+		@include inline-block;
+		position: relative;
+		background: transparent url(/static/home/modules/banner/i/promo-banners.png) no-repeat 0 0;
+		width: 793px;
+		height: 202px;
+		text-align: left;
+		dt, dd {
+			margin: 0 40px 0 300px;
+			max-width: 460px;
+			}
+		.img {
+			top: -22px;
+			left: 50px;
+			max-height: 120%;
+			margin: 0 !important;
+			}
+		dt {
+		    font: 1.625em 'Philosopher';
+			margin-bottom: 15px;
+			margin-left: 290px;
+			padding-top: 60px;
+			max-height: 30px;
+			}
+		dd {
+			font: .875em/1.4em 'Georgia';
+			max-height: 80px;
+			}
+		}
+    .banner_small {
+        background: transparent url(/static/home/modules/banner/i/promo-banners.png) no-repeat -410px -226px;
+        width: 360px;
+        height: 127px;
+		margin: -20px 10px 0;
+		padding: 15px;
+		position: relative;
+		text-align: left;
+		dt, dd {
+			margin: 0 0 0 140px;
+			font-family: Georgia;
+			}
+		dt {
+		    height: 60px;
+			}
+		.author {
+			font-size: 1em;
+			}
+		.book {
+			position: relative;
+			top: 10px;
+			font-size: 1.5em;
+			line-height: 1.2em;
+			text-decoration: underline;
+			}
+		.img {
+			bottom: 4px;
+			left: 25px;
+			width: 103px;
+			height: 133px;
+			margin: 0;
+			a {
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				display: block;
+				}
+			}
+		dd {
+		    margin-top: 20px;
+			}
+        }
+	.img {
+		position: absolute;
+        margin: 0;
+		}
+    dt, dd {
+        overflow: hidden;
+        }
+    dt {
+    	position: relative;
+    	}
+    dd {
+    	color: #fff;
+    	}
+    a {
+    	color: #fff;
+    	}
+    .button {
+        position: absolute;
+        top: 20px;
+        background: transparent url(data:image/png;base64,R0lGODlhAgATAJEAAOzTH/v2JvHRD+StDyH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ3Q0IzQTc5REZENzExRTI4REE2RTA1Mjc1MUIzOEEzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQ3Q0IzQTdBREZENzExRTI4REE2RTA1Mjc1MUIzOEEzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDdDQjNBNzdERkQ3MTFFMjhEQTZFMDUyNzUxQjM4QTMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDdDQjNBNzhERkQ3MTFFMjhEQTZFMDUyNzUxQjM4QTMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQAAAAAACwAAAAAAgATAAACC4wPkqvNLMaIssoCADs=) repeat-x 0 0;
+		font: .75em 'Myriad Pro';
+        text-transform: uppercase;
+        @include shadow(1px, 1px, 2px, 2px, 0, 0, 0, 0.5);
+        a {
+            @include txt-shadow(1px, 1px, 1px, #fbf115);
+            color: #000;
+            display: block;
+            padding: 2px 10px;
+            text-decoration: none;
+            }
+		}
+	}
+    .banner_small.banner_small__win {
+        background: transparent url(/static/home/modules/banner/i/promo-banners.png) no-repeat 0 -226px;
+    	}
+    .lt-ie9 {
+        .banner {
+            .button {
+                background: transparent url(/static/home/modules/banner/i/button.gif) repeat-x 0 0;
+                }
+            }
+        }
+    .lt-ie8 {
+    	.banner_large {
+    		float: left;
+    		margin-left: 120px;
+    		}
+    	.banner_small {
+    		float: left;
+    		}
+    	.banner_small.banner_small__win {
+    		margin-left: 115px;
+    		}
+    	}

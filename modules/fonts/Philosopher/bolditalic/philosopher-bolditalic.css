@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'PhilosopherBoldItalic';
+    src: url('philosopher-bolditalic.eot');
+    src: url('philosopher-bolditalic.eot') format('embedded-opentype'),
+         url('philosopher-bolditalic.woff') format('woff'),
+         url('philosopher-bolditalic.ttf') format('truetype'),
+         url('philosopher-bolditalic.svg#PhilosopherBoldItalic') format('svg');
+}

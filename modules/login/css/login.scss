@@ -1,0 +1,147 @@
+@import "../../fonts/fonts.scss";
+@import "../../base/css/tools.scss";
+
+.user-info,
+.login {
+	display: none;
+	}
+.user-info {
+    display: block;
+	}
+
+.unlog {
+	.global-header {
+		border-bottom: 2px solid #445060;
+		}
+	.search {
+		margin-left: 200px;
+		}
+	.user-info {
+	    display: none;
+		}
+	.login {
+		background: transparent url(/static/home/modules/login/i/bg.jpg) repeat-x 0 0;
+		display: block;
+		.page-center {
+			position: relative;
+			}
+		}
+	.cont-log,
+	.banner_large {
+	    display: none;
+		}
+	.cont-clear-bg.hide {
+		display: block;
+		}
+	.banner_small.hide {
+		display: block;
+		@include inline-block;
+		}
+	}
+.subscr {
+	padding: 40px 0 15px;
+	.item {
+		margin-left: 30px;
+		a {
+			display: block;
+			float: left;
+			}
+	}
+	.teaser-books-off {
+		margin: 20px 40px 0 0;
+		}
+	.teaser-devices {
+	    margin: 30px 40px 0 0;
+		}
+	.teaser-social-off {
+		margin: 35px 0 0;
+		}
+	.wrap {
+		clear: both;
+		width: 400px;
+		position: relative;
+		top: -10px;
+		left: 210px;
+		}
+	h1 {
+		font: 1.375em/.909em 'Philosoper';
+		color: #fff;
+		}
+	p {
+	    font: .875em/1.3571em Georgia;
+		color: #fff;
+		}
+	}
+.login_box {
+	background: transparent url(/static/home/modules/login/i/login-box-bg.png) no-repeat 0 0;
+	position: absolute;
+	right: 30px;
+	top: 70px;
+	width: 250px;
+	padding: 12px 30px;
+	input {
+		border: 0;
+		@include radius-(5px);
+		font: italic 1em Georgia;
+		color: #c0baba;
+		padding: 5px 5px 9px 7px;
+		display: block;
+		width: 200px;
+		background: #e4dcd9; /* Old browsers */
+		background: -moz-linear-gradient(top,  #e4dcd9 0%, #f3f3fb 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4dcd9), color-stop(100%,#f3f3fb)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #e4dcd9 0%,#f3f3fb 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #e4dcd9 0%,#f3f3fb 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #e4dcd9 0%,#f3f3fb 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #e4dcd9 0%,#f3f3fb 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4dcd9', endColorstr='#f3f3fb',GradientType=0 ); /* IE6-9 */
+		}
+	.button-1_wrap {
+		margin: -2px 0 0;
+		font-size: 1em;
+		}
+	.button-1 {
+		padding: 10px 12px;
+		i {
+			font-size: 1em;
+			font-weight: normal;
+			}
+		}
+	.login_box__msg {
+		color: #ffc600;
+		font: italic .875em Georgia;
+		margin: 7px 0 0 10px;
+		width: 200px;
+		text-align: center;
+		}
+	.login_box__link {
+		margin: 30px 0 0 45px;
+		.icon {
+			@include inline-block;
+			background: transparent url(/static/home/modules/base/i/icons.png) no-repeat 0 -61px;
+        	width: 16px;
+			height:15px;
+			position: relative;
+			bottom: -5px;
+			margin-right: 5px;
+			}
+		a {
+			font: .875em 'Philosopher';
+			color: #fff;
+			border-bottom: 1px dotted #717478;
+			text-decoration: none;
+			}
+		}
+	}
+
+.lt-ie8 {
+	.button-1_wrap {
+		margin: 0 0 10px 20px;
+		}
+	.login_box__msg {
+		margin-top: 20px;
+		}
+	.login_box__link {
+		margin-top: 5px;
+		}
+	}

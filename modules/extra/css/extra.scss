@@ -1,0 +1,69 @@
+@import "../../fonts/fonts.scss";
+@import "../../base/css/tools.scss";
+
+.extra {
+	background-color: #fdeedf;
+	.extra__wrap {
+		padding: 25px 30px 15px;
+		}
+	.column {
+		width: 30%;
+		margin-right: 1%;
+		@include inline-block;
+		vertical-align: top;
+		}
+	.column-last {
+		float: right;
+		margin: 0;
+		text-align: right;
+		}
+	h1 {
+		font: 1.1em 'Philosopher';
+        margin-top: 0;
+		a {
+			text-decoration: none;
+			border-bottom: 1px dotted;
+			&:hover {
+				border-bottom: 0;
+				}
+			}
+		}
+	p {
+		font: .875em/1.5em 'Philosopher';
+		}
+	.icon {
+		font-style: normal;
+		font-size: 8px;
+		color: #ab807a;
+		}
+    .list-icon {
+        dt {
+            width: 15px;
+            }
+        dd {
+            margin-left: 20px;
+            line-height: 1.3em;
+            }
+        img {
+            @include shadow(0, 0, 1px, 1px, 0, 0, 0, .1);
+            }
+        }
+    .large {
+        margin-top: 0;
+        font-size: 1.5em;
+        line-height: 1.2em;
+        }
+	}
+.lt-ie9 {
+	.extra {
+		.column {
+			float: left;
+			margin-right: 2%;
+			}
+		.column-last {
+			float: right;
+			margin: 0;
+			text-align: right;
+			}
+		}
+	}

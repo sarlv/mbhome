@@ -1,0 +1,47 @@
+@import "../../fonts/fonts.scss";
+@import "../../base/css/tools.scss";
+
+.shelf {
+    text-align: center;
+    padding: 10px 0 10px;
+    h1 {
+    	font: normal 1.6875em 'Philosopher';
+    	}
+    .link {
+        margin-top: -15px;
+        }
+	}
+.shelf_list {
+    margin-left: 0;
+    padding-left: 0;
+    background: transparent url(/static/home/modules/shelf/i/shelf.png) no-repeat center bottom;
+    padding: 0 0 34px;
+    .shelf_list__item {
+		@include inline-block;
+        @include shadow(0, 0, 2px, 2px, 0, 0, 0, 0.1);
+        position: relative;
+        margin: 0 10px;
+        height: 196px;
+		}
+    a {
+        display: block;
+        }
+    }
+
+.shelf__long {
+	.shelf_list {
+		background: transparent url(/static/home/modules/shelf/i/shelf-long.png) no-repeat center bottom;
+		}
+	}
+
+.lt-ie8 {
+    .shelf_list {
+        float: left;
+        clear: both;
+        padding: 0 5% 34px;
+        margin-bottom: 20px;
+        }
+    .shelf_list__item {
+        float: left;
+        }
+    }

@@ -1,0 +1,341 @@
+@import "../../fonts/fonts.scss";
+@import "../../base/css/tools.scss";
+
+.carousel {
+    position: relative;
+    display: none;
+    .carousel_wrap {
+        margin: 0 24px;
+        float: left;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        }
+	ul {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        left: 0;
+        }
+    .carousel__item {
+        float: left;
+        list-style: none;
+        margin: 0 4px;
+        *margin: 0 4px;
+        width: 84px;
+        img {        
+            @include shadow(0, 0, 2px, 2px, 0, 0, 0, .1);
+            display: block;
+            width: 100%;
+            height: auto;
+            }
+        }
+    .page-indicators {
+        margin-top: 3px;
+        padding: 0;
+        text-align: center;
+        li {
+            @include inline-block;
+            @include radius-(3px);
+            width: 5px;
+            height: 5px;
+            background-color: #e6d8c9;
+            }
+        .mark {
+            background-color: #8b3d00;
+            }
+        }
+	}
+    .carousel-control {
+        background: transparent url(/static/home/modules/carousel/i/collections-branches.png) no-repeat 0 0;
+        position: absolute;
+        width: 9px;
+        height: 17px;
+        text-decoration: none;
+        text-indent: -10000px;
+        top: 55px;
+        }
+    .left {
+        left: 22px;
+        background-position: -231px 1px;
+        }
+    .right {
+        right: 0;
+        background-position: -230px -24px;
+        }
+
+    .carousel.carousel__round {
+        padding: 0 20px;
+        .carousel_wrap {
+            margin: -25px 0 0;
+            padding-top: 25px;
+            }
+        ul {
+            margin: 0;
+            }
+        li, a, img {
+            @include radius-(60px);
+            }
+        li {
+            width: 102px;
+            margin: 0 21px;
+            padding-top: 110px;
+            position: relative;
+            text-align: center;
+            }
+        a {
+            font-size: .75em;
+            &:hover {
+
+                }
+            }
+        .img img {
+            width: 86px;
+            @include shadow(0, 2px, 10px, 5px, 0, 0, 0, 0.1);
+            }
+        li:hover {
+            img {
+                position: relative;
+                width: 108px;
+                left: -10px;
+                top: -20px;
+                }
+            }
+        .img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 106px;
+            height: 106px;
+                img {
+                    border: 7px solid #fff;
+                    }
+            }
+        .author__name,
+        .author__books,
+        .author__sub,
+        .author__friends {
+            display: block;
+            @include radius-(0);
+            color: #c7aba7;
+            }
+        .author__name {
+            color: #000;
+            margin-bottom: 15px;
+            &:hover {
+                color: #dc0000;
+                }
+            }
+        .author__friends {
+            color: #c7aba7;
+            a {
+                text-decoration: none;
+                border-bottom: 1px dotted;
+                @include radius-(0);
+                margin: 0 1px;
+                color: #c7aba7;
+                &:hover {
+                    border-bottom: 0;
+                    }
+                }
+        }
+        .carousel-control {
+            top: 43px;
+            }
+        .left {
+            left: -15px;
+            }
+        .right {
+            right: -15px;
+            }
+        }
+
+.lt-ie8 {
+	.carousel__item {
+		display: block;
+		float: left;
+		}
+    .carousel.carousel__round {
+        float: left;
+        width: 96%;
+        padding-left: 1%;
+        }
+	}
+
+.sidebar {
+    .carousel_wrap {
+        width: 276px;
+        }
+    }
+
+.carousel__large {
+    width: 100%;
+    padding: 60px 56px 30px;
+    position: relative;
+    left: -56px;
+    text-align: center;
+    background: transparent url(/static/home/modules/base/i/fabric.jpg) repeat center 0;
+    h1 {
+        font: normal 1.5em 'Philosopher';
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        a {
+            color: #fff;
+            }
+        }
+    .carousel_wrap {
+        float: none;
+        margin: 0;
+        }
+    ul {
+        margin: 0;
+        padding-left: 13px;
+        }
+    .carousel__item {
+        width: 218px;
+        padding: 17px 30px 0;
+        text-align: center;
+        font: 1em 'Philosopher';
+        img {
+            @include radius-(6px);
+            @include shadow(0, 0, 10px, 5px, 0, 0, 0, .4);
+            }
+        .bg {
+            display: none;
+            }
+        }
+    .wrap {
+        margin-top: 18px;
+        display: block;
+        width: 270px;
+        margin-left: -20px;
+        }
+    
+    a, sup {
+        color: #ffe4d9;
+        &:hover {
+            @include txt-shadow(0px, 0px, 15px, #fbcb07);
+            }
+        }
+    .active {
+        padding: 0 34px;
+        width: 236px;
+        @include radius-(6px);
+        position: relative;
+        .bg {
+            display: block;
+            position: absolute;
+            z-index: 0;
+            left: 0;
+            top: 26px;
+            @include radius-(0);
+            @include shadow(0, 0, 0, 0, 0, 0, 0, 0);
+            }
+        a {
+            position: relative;
+            z-index: 1;
+            }
+        }
+    .carousel-control {
+        top: 126px;
+        height: 130px;
+        width: 50px;
+        i {
+            background: transparent url(/static/home/modules/carousel/i/collections-branches.png) no-repeat -228px 0;
+            height: 17px;
+            width: 9px;
+            display: block;
+            }
+        }
+    
+    .left {
+        left: 14px;
+        background-position: -116px 0;
+        i {
+            margin: 55px 0 0 34px;
+            background-position: -231px -50px;
+            }
+        }
+    .right {
+        right: 14px;
+        background-position: -168px 0;
+        i {
+            margin: 55px 0 0 5px;
+            background-position: -231px -70px;
+            }
+        }
+        .ungle {
+            background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAQCAYAAABKkhw/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1MTA2NjRCMEREN0ExMUUyQjZEQkUxMUE3OUFGMjJCQiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1MTA2NjRCMUREN0ExMUUyQjZEQkUxMUE3OUFGMjJCQiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjUxMDY2NEFFREQ3QTExRTJCNkRCRTExQTc5QUYyMkJCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjUxMDY2NEFGREQ3QTExRTJCNkRCRTExQTc5QUYyMkJCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+eJAjMAAABAdJREFUeNq8lt1rG0cQwGdvP04n6yQi0zRK0iakUPpQMPQhFAIuLQT3b+of0L+pxtBSQ178UDD0oQQa6pJErUsUTifr7vbjtjN7Pqq4lhNHtkYsK2k/Zn4zs7PLvryVerhAfA0rSVVVIIQILYqiZk/fqGSMhb6ua7DWhhbH8Ur6WHTxuGiVLt/h4uHW+GXCOQcpZei11qERPAkBKqVCIzvetteik5aPvwUY2+0z/72EKxSCIWCCIdj5XEOSNGBFYUJPUaU5bbSvWN7gY4tefTxi6lUO9+KemhngyeR1cUf21T6lIucSvcfRIgbWkPEWvHVQQYFjESg0OKQtpYSrwTkHHntCatZzKMsyOMCYBpQgyQmdTifMJ1jCZryZD9jX4EMmaFzjcL8YEmCC4z54TCTqijw60+GYCevNVG8PbyQvJLiimuneZgpHe2OvzwU+K1sJ+yzTMJICfpRxBFJ1wHMBFpcYS0rwCzMhzchAgiWl5Agyksa5kpcCdhpdzVlwHoHRWoIODiRbvQzjEscE8jJnwegSTIWwFr4ZKBgfFv63pSn9/cM77LuDF+dS08LtLju2mBbG1Kqy856O4FeHxjtUilpBOd54rqZ0RKPIywiEvEDZydWb569ti78XpVlHUTMh2h4jyBGaPpQ8WqBTapxUeajRCaqGzzc8zCSWCPRBtT/3k2WwxMrepVC0sp2y4WsDo4LBAB39hCpAbBoiikIwmKKEpR3RgbYW4r8IU8WmCFP0g7cxihRhOsNthK01ofBwpONYcsVpZY9Oq2clMTttSKxHWAqyGxLG+/lyyP8VtcsAt/L1LdHLrbupa0jcnA4bHHq0p47oTLGmx/NH33VpAmwLTHCLwO1/BExNdTCuGGGqAxH12KhnjZlbvOuciqBIBT/+6S87u6zt4n3K3qmioOxhunEPnXbf+voPi1Y5hKSi40UUIqvBLL1WzrtiyAkUaRY+NXAMiMA9BYvu0/yDycnRKiVbrFrzD/KTo53RiBdWb86tflXi+dIULayc7aV49qFxHnQ7p8IUp7PA8fwrTOQYC1tXqM1EqGx3PHar2iuu4qIjQ3Y+vpvpov4ItB1iyg7wkogxE/dkdDkVZVnRSXiMJ79SCIkRnyRJku3++dxdha3vdYbfRb7qs0HJVJpr80Gh/S/hyYf3yEbah+n8JMzpdzfgJJ8C3XP0hE0U+yJV8p+O1/nPU59dh13XBtzKzoPbPJvlI0zVpDD2KZMKcryPSVK8f73Bl5cUn8ZKFYNeOt599tJdpz3XDtzKtw8+5JNpfnduzWBW2EP6r5eIra6Q2bCfPv/h2d9uHXasDbiVR6PBzZmuhgFYxZMn4+x4nfrXDhze7J+Mwmtl7/exXrfufwUYAPGIJ8clKjf4AAAAAElFTkSuQmCC) no-repeat 0 0;
+            position: absolute;
+            bottom: -16px;
+            height: 16px;
+            width: 30px;
+        }
+        .ungle.left {
+            left: 0; 
+            }
+        .ungle.right {
+            right: 0;
+            background-position: -30px 0;
+            }
+    }
+
+.lt-ie9 {
+    .carousel.carousel__round {
+        img {
+            &:hover {
+                position: static;
+                width: 86px;
+                margin-left: 0;
+                margin-top: 0;
+                bottom: 0;
+                }
+            }
+        }
+    }
+
+.carousel.carousel_shelf {
+    background: transparent url(/static/home/modules/shelf/i/shelf-long.png) no-repeat center bottom;
+    padding: 0 55px 40px;
+    .carousel_wrap {
+        margin: 0;
+        }
+    .carousel-control.right {
+        right: 12px;
+        }
+    .carousel__item {
+        width: 128px;
+        margin: 0 12px;
+        position: relative;
+        }
+    }
+
+.shelf {
+	.carousel {
+		.shelf_list {
+			padding-bottom: 35px;
+            min-width: 100% !important;
+			}
+		.carousel-control {
+		    top: 80px;
+			}
+		}
+	}
+
+.link {
+	padding-top: 15px;
+	font-size: 1.1em;
+	a {
+		text-decoration: none;
+		border-bottom: 1px solid #d5c0bd;
+		font-style: italic;
+		&:hover {
+			border-bottom: 0;
+			}
+		}
+	}
+
